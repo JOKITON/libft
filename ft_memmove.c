@@ -6,7 +6,7 @@
 /*   By: jaizpuru <jaizpuru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 16:20:09 by jaizpuru          #+#    #+#             */
-/*   Updated: 2022/04/05 12:50:56 by jaizpuru         ###   ########.fr       */
+/*   Updated: 2022/04/06 11:52:52 by jaizpuru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,23 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*content;
-	char	*content2;
+	char	*content_src;
+	char	*content_dst;
 	size_t	loop;
 
 	loop = 0;
-	content = (char *)src;
-	content2 = (char *)dst;
-	while (len > loop)
+	content_src = (char *)src;
+	content_dst = (char *)dst;
+	if (dst > src)
 	{
-		content2[loop] = content[loop];
-		loop++;
+		while (len--)
+		{
+			content_dst[len] = content_src[len];
+		}
+	}
+	else if (src > dst)
+	{
+		ft_memcpy(dst, src, len);
 	}
 	return (dst);
 }
