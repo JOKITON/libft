@@ -1,2 +1,2 @@
 # libft
-No copien los ejercicios sin entenderlos.
+Don't copy without understanding the exercises.
