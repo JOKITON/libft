@@ -6,6 +6,7 @@ Estas funciones ya existen de antemano en librerias como "string.h" o "xlocale.h
 
 Hay algunos fallos en el Makefile y puede ser que en la libreria tambien!!!
 
+_____________________________________________________________________________________________________________________________________________________________________
 
 LIBFT.a == Wiki
 
