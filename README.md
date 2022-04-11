@@ -1,3 +1,12 @@
+He creado estas funciones para crear una libreria estatica y usar esta misma libreria para futuros proyectos.
+
+Para que estas funciones se puedan entender en el caso de que alguna persona quiera aprender me he molestado en escribir un breve repaso sobre cada uno de estos para que se entienda mejor su funcionamiento, valor de retorno, parametros, casteo, condiciones y finalidad entre otras...
+
+Estas funciones ya existen de antemano en librerias como "string.h" o "xlocale.h". He intentado crear una copia exacta de cada una de ellas y tambien aconsejo descargar algunos "testers" que se encuentran por GitHub... pueden ser muy utiles!!
+
+Hay algunos fallos en el Makefile y puede ser que en la libreria tambien!!!
+
+
 LIBFT.a == Wiki
 
 ft_isalpha = Devuelve un valor int negativo o positivo dependiendo de si recoge un carácter o algo que no sea un carácter.
