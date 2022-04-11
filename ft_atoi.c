@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaizpuru <jaizpuru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/04 15:51:21 by jaizpuru          #+#    #+#             */
-/*   Updated: 2022/04/07 16:38:49 by jaizpuru         ###   ########.fr       */
+/*   Created: 2022/04/07 16:42:49 by jaizpuru          #+#    #+#             */
+/*   Updated: 2022/04/07 16:51:03 by jaizpuru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int	ft_atoi(const char *str)
 {
-	char	*content;
-	char	*content2;
-	size_t	loop;
+	int				box;
+	unsigned int	loop;
 
+	box = 0;
 	loop = 0;
-	content = (char *)src;
-	content2 = (char *)dst;
-	while (n > loop)
+	while (str[loop])
 	{
-		content2[loop] = content[loop];
+		box = (int)*(str + loop);
 		loop++;
 	}
-	return (dst);
+	return (box);
 }

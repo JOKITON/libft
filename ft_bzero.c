@@ -6,7 +6,7 @@
 /*   By: jaizpuru <jaizpuru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 12:40:20 by jaizpuru          #+#    #+#             */
-/*   Updated: 2022/04/05 11:52:13 by jaizpuru         ###   ########.fr       */
+/*   Updated: 2022/04/07 16:39:25 by jaizpuru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,3 @@ void	ft_bzero(void *s, size_t n)
 		number2++;
 	}
 }
-
-/* int	main(void)
-{
-	unsigned char	scr[] = "Buenas Tardes";
-	size_t			n;
-
-	n = 2;
-	ft_bzero(scr, n);
-	printf("%s\n", scr);
-	bzero(scr, n);
-	printf("%s\n", scr);
-} */

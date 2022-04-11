@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaizpuru <jaizpuru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/04 15:51:21 by jaizpuru          #+#    #+#             */
-/*   Updated: 2022/04/07 16:38:49 by jaizpuru         ###   ########.fr       */
+/*   Created: 2022/04/06 12:04:52 by jaizpuru          #+#    #+#             */
+/*   Updated: 2022/04/07 16:39:36 by jaizpuru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int	ft_toupper(int c)
 {
-	char	*content;
-	char	*content2;
-	size_t	loop;
-
-	loop = 0;
-	content = (char *)src;
-	content2 = (char *)dst;
-	while (n > loop)
+	if (c >= 'a' && c <= 'z')
 	{
-		content2[loop] = content[loop];
-		loop++;
+		return (c -32);
 	}
-	return (dst);
+	return (c);
 }

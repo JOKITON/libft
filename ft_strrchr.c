@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaizpuru <jaizpuru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/04 15:51:21 by jaizpuru          #+#    #+#             */
-/*   Updated: 2022/04/07 16:38:49 by jaizpuru         ###   ########.fr       */
+/*   Created: 2022/04/06 15:23:39 by jaizpuru          #+#    #+#             */
+/*   Updated: 2022/04/06 15:29:35 by jaizpuru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+char	*ft_strrchr(const char *s, int c)
 {
-	char	*content;
-	char	*content2;
-	size_t	loop;
+	int		str_len;
+	char	*pointer;
+	char	*result;
 
-	loop = 0;
-	content = (char *)src;
-	content2 = (char *)dst;
-	while (n > loop)
+	result = 0;
+	if (s == 0)
+		return (0);
+	pointer = (char *) s;
+	str_len = 0;
+	while (s[str_len])
 	{
-		content2[loop] = content[loop];
-		loop++;
+		if (s[str_len] == (char)c)
+		{
+			result = &pointer[str_len];
+		}
+		str_len++;
 	}
-	return (dst);
+	if (s[str_len] == (char)c)
+	{
+		result = &pointer[str_len];
+	}
+	return (result);
 }

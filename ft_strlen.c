@@ -6,7 +6,7 @@
 /*   By: jaizpuru <jaizpuru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 16:24:28 by jaizpuru          #+#    #+#             */
-/*   Updated: 2022/04/04 15:00:43 by jaizpuru         ###   ########.fr       */
+/*   Updated: 2022/04/07 16:38:19 by jaizpuru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,3 @@ size_t	ft_strlen(const char *s)
 	}
 	return (length);
 }
-
-/* int	main(void)
-{
-	const char	src[8] = "Buenas!";
-
-	printf("%zu\n", ft_strlen(src));
-	printf("%zu\n", strlen(src));
-} */

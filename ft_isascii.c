@@ -6,7 +6,7 @@
 /*   By: jaizpuru <jaizpuru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 15:38:53 by jaizpuru          #+#    #+#             */
-/*   Updated: 2022/04/04 10:40:07 by jaizpuru         ###   ########.fr       */
+/*   Updated: 2022/04/07 16:39:06 by jaizpuru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,3 @@ int	ft_isascii(int number)
 	else
 		return (0);
 }
-
-/*
-int	main(void)
-{
-	int	scr = 127;
-
-	printf("%d\n", ft_isascii(scr));
-	printf("%d\n", isascii(scr));
-} */

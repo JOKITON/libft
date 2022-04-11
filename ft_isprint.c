@@ -6,7 +6,7 @@
 /*   By: jaizpuru <jaizpuru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 15:56:01 by jaizpuru          #+#    #+#             */
-/*   Updated: 2022/04/04 10:39:47 by jaizpuru         ###   ########.fr       */
+/*   Updated: 2022/04/07 16:38:56 by jaizpuru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,3 @@ int	ft_isprint(char number)
 	else
 		return (0);
 }
-
-/* int	main(void)
-{
-	char	scr = '\n';
-
-	printf("%d\n", ft_isprint(scr));
-	printf("%d\n", isprint(scr));
-} */

@@ -6,7 +6,7 @@
 /*   By: jaizpuru <jaizpuru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:55:20 by jaizpuru          #+#    #+#             */
-/*   Updated: 2022/04/04 14:12:00 by jaizpuru         ###   ########.fr       */
+/*   Updated: 2022/04/07 16:39:01 by jaizpuru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,3 @@ int	ft_isdigit(int number)
 	else
 		return (0);
 }
-
-/* int	main(void)
-{
-	char	scr = '4';
-
-	printf("%d\n", ft_isdigit(scr));
-	printf("%d\n", isdigit(scr));
-} */

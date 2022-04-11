@@ -6,7 +6,7 @@
 /*   By: jaizpuru <jaizpuru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 15:01:00 by jaizpuru          #+#    #+#             */
-/*   Updated: 2022/04/06 11:18:40 by jaizpuru         ###   ########.fr       */
+/*   Updated: 2022/04/07 16:38:35 by jaizpuru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,3 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (content);
 }
-
-/* int	main(void)
-{
-	unsigned char	str[7] = "Buenas";
-	size_t			times;
-
-	times = 5;
-	ft_memset(str, 77, times);
-	printf("%s\n", str);
-	memset(str, 77, times);
-	printf("%s", str);
-	return (0);
-} */

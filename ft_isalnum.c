@@ -6,7 +6,7 @@
 /*   By: jaizpuru <jaizpuru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 15:04:21 by jaizpuru          #+#    #+#             */
-/*   Updated: 2022/04/04 10:56:17 by jaizpuru         ###   ########.fr       */
+/*   Updated: 2022/04/07 16:39:16 by jaizpuru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,3 @@ int	ft_isalnum(int number)
 	else
 		return (0);
 }
-
-/* int	main(void)
-{
-	char	scr = '5';
-
-	printf("%d\n", ft_isalnum(scr));
-	printf("%d\n", isalnum(scr));
-} */
