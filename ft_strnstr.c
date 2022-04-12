@@ -6,7 +6,7 @@
 /*   By: jaizpuru <jaizpuru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 15:38:01 by jaizpuru          #+#    #+#             */
-/*   Updated: 2022/04/07 16:38:05 by jaizpuru         ###   ########.fr       */
+/*   Updated: 2022/04/12 10:08:46 by jaizpuru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 	loop = 0;
 	result = (char *)haystack;
-	needle_len = strlen(needle);
+	needle_len = ft_strlen(needle);
 	if (needle_len == 0 || haystack == needle)
 		return (result);
 	while (len > loop && result[loop])

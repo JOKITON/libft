@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaizpuru <jaizpuru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 16:24:28 by jaizpuru          #+#    #+#             */
-/*   Updated: 2022/04/11 12:57:19 by jaizpuru         ###   ########.fr       */
+/*   Created: 2022/04/12 11:50:31 by jaizpuru          #+#    #+#             */
+/*   Updated: 2022/04/12 13:31:23 by jaizpuru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	length;
+	unsigned int	s_len;
+	char			*res;
+	unsigned int	list1;
+	unsigned int	list2;
 
-	length = 0;
-	while (*s != '\0')
+	s_len = (ft_strlen(s1) + ft_strlen(s2));
+	list1 = 0;
+	list2 = -1;
+	res = malloc(sizeof(char) * (s_len) + 1);
+	if (!s1 || !s2)
+		return (NULL);
+	while (s1[list1])
 	{
-		length++;
-		s++;
+		res[list1] = s1[list1];
+		list1++;
 	}
-	return (length);
+	while (s2[++list2])
+	{
+		res[list1++] = s2[list2];
+	}
+	res[list1] = '\0';
+	return (res);
 }
