@@ -1,13 +1,3 @@
-He creado estas funciones para crear una libreria estatica y usar esta misma libreria para futuros proyectos.
-
-Para que estas funciones se puedan entender en el caso de que alguna persona quiera aprender me he molestado en escribir un breve repaso sobre cada uno de estos para que se entienda mejor su funcionamiento, valor de retorno, parametros, casteo, condiciones y finalidad entre otras...
-
-Estas funciones ya existen de antemano en librerias como "string.h" o "xlocale.h". He intentado crear una copia exacta de cada una de ellas y tambien aconsejo descargar algunos "testers" que se encuentran por GitHub... pueden ser muy utiles!!
-
-Hay algunos fallos en el Makefile y puede ser que en la libreria tambien!!!
-
-_____________________________________________________________________________________________________________________________________________________________________
-
 LIBFT.a == Wiki
 
 ft_isalpha = Devuelve un valor int negativo o positivo dependiendo de si recoge un carácter o algo que no sea un carácter.
@@ -54,4 +44,6 @@ ft_strnstr = En esta función tenemos cómo parámetros dos cadenas de caractere
 _____________________________________________________________________________________________________________________________
 FUNCIONES CON MALLOC:
 
-ft_calloc = 
+ft_calloc = En esta función tenemos un valor de retorno tipo void * y tenemos como parámetros dos size_t, el contador y el tamaño. El propósito de la función es reservar memoria en función del valor de count y por cada count el size (tamaño) que tiene. Entonces debemos crear una variable nueva tipo void * para crear el espacio requerido y después vaciar toda la memoria / llenarla de zeros. Debemos retornar un pointer al espacio reservado!
+
+ft_strdup = En esta función tenemos un valor de retorno tipo char *, la funcionalidad de esta es recoger un const char *s y hacer una copia de este reservando memoria en función de la longitud del original y creando un bucle para sobreescribir cada caracter y crear la copia. Como la función empieza por str tenemos que definir el ultimo espacio de la cadena con NULL!! A la hora de reservar memoria con malloc debemos de sumar uno de espacio para el NULL!
