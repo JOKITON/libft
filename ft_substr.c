@@ -6,7 +6,7 @@
 /*   By: jaizpuru <jaizpuru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 10:20:03 by jaizpuru          #+#    #+#             */
-/*   Updated: 2022/04/12 11:47:41 by jaizpuru         ###   ########.fr       */
+/*   Updated: 2022/04/12 16:10:25 by jaizpuru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	s_len = ft_strlen(s);
 	str = (char *)s;
-	str = malloc((sizeof(char) * len) + 1);
+	if (ft_strlen(str) < len)
+		len = ft_strlen(str);
+	str = malloc(sizeof(char) * (len + 1));
 	if (!str || !s)
 	{
 		return (NULL);
