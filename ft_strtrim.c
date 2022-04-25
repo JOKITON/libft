@@ -6,7 +6,7 @@
 /*   By: jaizpuru <jaizpuru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 14:13:52 by jaizpuru          #+#    #+#             */
-/*   Updated: 2022/04/13 12:24:23 by jaizpuru         ###   ########.fr       */
+/*   Updated: 2022/04/25 15:49:17 by jaizpuru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,20 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		len;
-	int		num;
+	size_t	num;
+	size_t	len;
 
-	len = ft_strlen(s1);
-	while (s1)
-	{
-		if (ft_strchr(s1[num], set[num]))
-			num++;
-	}
-	if (!pointer == malloc ((size_t)(s1 - (pointer_front + pointer_back))))
+	num = 0;
+	if (!s1 || !set)
 		return (NULL);
-	return (pointer);
+	len = (ft_strlen(s1));
+	while (ft_strchr(set, (char) s1[num]))
+	{
+		num++;
+	}
+	while (ft_strchr(set, (char) s1[len]))
+	{
+		len--;
+	}
+	return (ft_substr(s1, num, (len - num) + 1));
 }
-
-/* int	main(void)
-{
-	char	str1[6] = "21421";
-	char	del[2] = "2";
-
-	printf("%s\n", ft_strtrim(str1, del));
-	return (0);
-} */
