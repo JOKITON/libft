@@ -6,13 +6,13 @@
 /*   By: jaizpuru <jaizpuru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 15:56:01 by jaizpuru          #+#    #+#             */
-/*   Updated: 2022/04/07 16:38:56 by jaizpuru         ###   ########.fr       */
+/*   Updated: 2022/04/26 10:33:15 by jaizpuru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(char number)
+int	ft_isprint(int number)
 {
 	if (number >= 32 && number <= 126)
 	{

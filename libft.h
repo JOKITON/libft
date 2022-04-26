@@ -6,7 +6,7 @@
 /*   By: jaizpuru <jaizpuru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 10:36:52 by jaizpuru          #+#    #+#             */
-/*   Updated: 2022/04/12 16:31:24 by jaizpuru         ###   ########.fr       */
+/*   Updated: 2022/04/26 10:33:30 by jaizpuru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		ft_isalnum(int number);
 int		ft_isalpha(int number);
 int		ft_isascii(int number);
 int		ft_isdigit(int number);
-int		ft_isprint(char number);
+int		ft_isprint(int number);
 size_t	ft_strlen(const char *s);
 void	ft_bzero(void *s, size_t number);
 void	*ft_memcpy(void *dst, const void *src, size_t n);

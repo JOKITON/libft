@@ -6,7 +6,7 @@
 /*   By: jaizpuru <jaizpuru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 13:35:01 by jaizpuru          #+#    #+#             */
-/*   Updated: 2022/04/06 15:20:53 by jaizpuru         ###   ########.fr       */
+/*   Updated: 2022/04/26 14:14:04 by jaizpuru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strchr(const char *s, int c)
 	int		str_len;
 	char	*pointer;
 
-	if (s == 0)
-		return (NULL);
 	pointer = (char *) s;
 	str_len = 0;
 	while (s[str_len])

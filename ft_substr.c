@@ -6,7 +6,7 @@
 /*   By: jaizpuru <jaizpuru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 10:20:03 by jaizpuru          #+#    #+#             */
-/*   Updated: 2022/04/12 16:10:25 by jaizpuru         ###   ########.fr       */
+/*   Updated: 2022/04/26 13:03:31 by jaizpuru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,27 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char			*str;
-	unsigned int	sub_len;
-	unsigned int	s_len;
+	size_t	i;
+	size_t	j;
+	char	*str;
 
-	s_len = ft_strlen(s);
-	str = (char *)s;
-	if (ft_strlen(str) < len)
-		len = ft_strlen(str);
-	str = malloc(sizeof(char) * (len + 1));
-	if (!str || !s)
+	if (!s)
+		return (0);
+	if (ft_strlen(s) > len + start)
+		str = malloc((len + 1) * sizeof(char));
+	else if (ft_strlen(s) > start)
+		str = malloc((ft_strlen(s) - start + 1) * sizeof(char));
+	else
+		str = malloc(sizeof(char));
+	if (!str)
+		return (0);
+	i = 0;
+	j = start;
+	if (start < ft_strlen(s))
 	{
-		return (NULL);
+		while (s[i] && (i < len) && (j < ft_strlen(s)))
+			str[i++] = s[j++];
 	}
-	sub_len = 0;
-	while (str && sub_len < len && start < s_len)
-	{
-		str[sub_len] = s[start];
-		start++;
-		sub_len++;
-	}
-	str[sub_len] = '\0';
+	str[i] = '\0';
 	return (str);
 }

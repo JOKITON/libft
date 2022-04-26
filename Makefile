@@ -6,7 +6,7 @@
 #    By: jaizpuru <jaizpuru@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/04 13:52:17 by jaizpuru          #+#    #+#              #
-#    Updated: 2022/04/12 15:15:55 by jaizpuru         ###   ########.fr        #
+#    Updated: 2022/04/26 14:55:10 by jaizpuru         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,4 +36,4 @@ fclean:
 
 re: fclean all
 
-.PHONY: all clean flcean re
+.PHONY: all clean fclean re
