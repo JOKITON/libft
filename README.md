@@ -1,5 +1,7 @@
 LIBFT.a == Wiki
 
+https://www.youtube.com/user/mycodeschool
+
 ft_isalpha = Devuelve un valor int negativo o positivo dependiendo de si recoge un carácter o algo que no sea un carácter.
 
 ft_isdigit = Devuelve un valor int negativo o positivo dependiendo de si recoge un número o algo que no sea un número.
