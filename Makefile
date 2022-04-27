@@ -6,34 +6,41 @@
 #    By: jaizpuru <jaizpuru@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/04 13:52:17 by jaizpuru          #+#    #+#              #
-#    Updated: 2022/04/26 14:55:10 by jaizpuru         ###   ########.fr        #
+#    Updated: 2022/04/26 15:19:19 by jaizpuru         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRCS = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_strlen.c ft_bzero.c ft_memcpy.c ft_memset.c ft_memmove.c ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c
+SRCS = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_strlen.c ft_bzero.c ft_memcpy.c ft_memset.c ft_memmove.c ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c
 
-OBJS = $(SRCS:.c=.o)
+OBJECTS = $(SRCS:.c=.o)
 
-CC = gcc
+OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
 CFLAGS = -Wall -Wextra -Werror
 
-all : $(NAME)
+all: $(NAME)
 
-$(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS)
+$(NAME): $(OBJECTS)
+	ar rc $(NAME) $(OBJECTS)
 
-$(OBJS): $(SRCS)
-	$(CC) $(CFLAGS) -c $(SRCS)
+$(OBJECTS): $(SRCS)
+	gcc $(CFLAGS) -c $(SRCS)
+
+$(OBJ_BONUS): $(SRCS) $(SRC_BONUS)
+	gcc $(CFLAGS) -c $(SRCS) $(SRC_BONUS)
+
+bonus: $(OBJECTS) $(OBJ_BONUS)
+	ar rc $(NAME) $(OBJECTS) $(OBJ_BONUS)
 
 clean:
-	rm -f $(OBJS)
+	@rm -f $(OBJECTS) $(OBJ_BONUS)
 
-fclean:
-	rm -f $(NAME)
+fclean: clean
+	@rm -f $(OBJECTS) $(OBJ_BONUS) $(NAME)
 
 re: fclean all
 
 .PHONY: all clean fclean re
+
