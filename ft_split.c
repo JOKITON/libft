@@ -6,86 +6,115 @@
 /*   By: jaizpuru <jaizpuru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 15:09:32 by jaizpuru          #+#    #+#             */
-/*   Updated: 2022/04/28 13:17:18 by jaizpuru         ###   ########.fr       */
+/*   Updated: 2022/04/28 16:27:58 by jaizpuru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_substr(const char*str, char chr)
+/*
+1.	The ft_split function takes two parameters: a string and a character.
+2.	The ft_split function allocates memory for an array of strings.
+3.	The ft_split function calls ft_countwordblocks to get the number of blocks of
+	words.
+4.	The ft_split function allocates memory for the array of strings.
+5.	The ft_split function calls ft_split_words to split the string into an array
+	of strings.
+6.	The ft_split function returns the array of strings.
+*/
+/*
+* count blocks of words separated by c(s) returns n of blks found
+*/
+static size_t	ft_countwordblocks(char const *s, char c)
 {
-	int		res;
-	int		string_len;
+	size_t	blks;
+	size_t	word;
 
-	string_len = 0;
-	res = 0;
-	while (str[string_len])
+	blks = 0;
+	word = 0;
+	while (*s != '\0')
 	{
-		if ((char)str[string_len] == chr)
+		if (*s == c)
+			word = 0;
+		else if ((*s != c) && (word == 0))
 		{
-			++res;
+			word = 1;
+			++blks;
 		}
-		string_len++;
+		++s;
 	}
-	return (res);
+	return (blks);
 }
 
-char	*array_factory(const char *string, int start, int finish)
+/*
+* str len that returns if c is found or \0
+*/
+static size_t	ft_strclen(const char *s, char c)
 {
-	int		pos;
-	char	*num_str;
+	size_t	int_len;
 
-	num_str = malloc((finish - start + 1) * sizeof(char));
-	if (!num_str)
-		return (0);
-	pos = 0;
-	while (finish > start)
-	{
-		num_str[pos++] = string[start++];
-	}
-	num_str[pos] = '\0';
-	return (num_str);
+	int_len = 0;
+	while (s[int_len] != '\0' && s[int_len] != c)
+		int_len++;
+	return (int_len);
 }
 
+/*
+* Helper function: walking through s and calloc'ing and memcpy'ing the blocks
+* into the **arr. Due to calloc the \0 is there and we can use just memcpy.
+* [1,2]; 1=>"blck1\0" 2=>"blck2\0"
+*/
+static char	**ft_split_words(char **arr, const char *s, const char c)
+{
+	int	pos;
+	int	blk_len;
+
+	pos = 0;
+	while (*s)
+	{
+		while (*s && *s == c)
+			s++;
+		if (*s)
+		{
+			blk_len = ft_strclen(s, c);
+			arr[pos] = (char *)ft_calloc(blk_len + 1, sizeof(char));
+			if (!arr[pos])
+				return (NULL);
+			ft_memcpy(arr[pos], s, (size_t)blk_len);
+			s += blk_len;
+			pos++;
+		}
+	}
+	return (arr);
+}
+
+/*
+* Allocates (with malloc(3)) and returns an array of strings obtained by
+* splitting ’s’ using the character ’c’ as a delimiter. The array must be
+* ended by a NULL pointer. Returns The array of new strings resulting from the
+* split. NULL if the allocation fails.
+* Allowed functions: malloc, free
+* arr = [start,t1,t2,...,0]
+*/
 char	**ft_split(char const *s, char c)
 {
-	char	**result;
-	size_t	len;
-	int		num;
-	size_t	s_len;
+	char	**arr;
 
-	num = -1;
-	len = 0;
-	s_len = 0;
-	result = malloc(sizeof(char) * count_substr(s, c));
-	if (!s || !(result))
-		return (0);
-	while (ft_strlen(s) >= s_len)
-	{
-		if (s[s_len] != c && num < 0)
-			num = s_len;
-		if (s[s_len] == c && num >= 0)
-		{
-			result[len++] = array_factory(s, num, s_len);
-			num = -1;
-		}
-	s_len++;
-	}
-	result[len] = 0;
-	return (result);
+	arr = (char **)ft_calloc(ft_countwordblocks(s, c) + 1, sizeof(char *));
+	arr = ft_split_words(arr, s, c);
+	return (arr);
 }
-/*
-int	main(void)
+
+/* int	main(void)
 {
-	const char	str[42] = {"Buenas Tardes Buenas Noches Malas Tardes!"};
-	char		**result_2 = ft_split(str, ' ');
+	const char	str[] = {"  Buenas Tardes"};
 	int			number;
+	char		**result = ft_split(str, 'e');
 
 	number = 0;
-	while (number <= 8)
+	while (number <= 3)
 	{
-		printf("String numero %d en el array: %s\n",
-			number, *(result_2 + number));
+		printf("String numero %d en el array: %s\n", number, result[number]);
 		number++;
 	}
 	return (0);
