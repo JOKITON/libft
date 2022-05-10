@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaizpuru <jaizpuru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/02 16:51:20 by jaizpuru          #+#    #+#             */
-/*   Updated: 2022/05/09 11:27:15 by jaizpuru         ###   ########.fr       */
+/*   Created: 2022/05/09 15:45:51 by jaizpuru          #+#    #+#             */
+/*   Updated: 2022/05/09 16:51:16 by jaizpuru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list	*new;
+	t_list	*aux;
 
-	new = (t_list *)malloc(sizeof(t_list));
-	if (!(new))
-		return (0);
-	new->content = content;
-	new->next = NULL;
-	return (new);
+	if (!lst)
+		return ;
+	while (*lst)
+	{
+		aux = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = aux;
+	}
+	*lst = 0;
 }
-/*
-int	main(void)
-{
-	char	*str = "Buenas Tardes";
-	t_list	*estructura;
-
-	estructura = ft_lstnew(str);
-	printf("%s\n", estructura->content);
-} */

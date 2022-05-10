@@ -21,7 +21,7 @@ char	*ft_strchr(const char *s, int c)
 	str_len = 0;
 	while (s[str_len])
 	{
-		if (s[str_len] == (char)c)
+		if (s[str_len] == (unsigned char)c)
 		{
 			return (&pointer[str_len]);
 		}
